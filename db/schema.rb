@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20161216231257) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.integer  "youtube_id",      null: false
+    t.string   "youtube_id",      null: false
     t.integer  "category_id",     null: false
     t.integer  "sub_category_id", null: false
     t.datetime "created_at",      null: false
