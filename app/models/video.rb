@@ -1,6 +1,7 @@
 class Video < ApplicationRecord
 	has_many :video_histories
 	has_many :favorites
+
 	belongs_to :category, optional: true  #what is optional: true?
 	belongs_to :sub_category, optional: true
 	validates :youtube_id, presence: true
