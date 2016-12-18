@@ -10,7 +10,11 @@ describe Video do
   end
   subject { Video.new(youtube_id: random_youtube_id,
                       category_id: category.id,
-                      sub_category_id: sub_category.id
+                      sub_category_id: sub_category.id,
+                      title: "hello",
+                      thumbnail_url: "http://uehfeu.com",
+                      embed_url: "hufiewhfuiewfnw",
+                      description: "hello"
                       ) }
   it { should have_many(:video_histories) }
   it { should have_many(:favorites) }
@@ -19,7 +23,9 @@ describe Video do
   it { should validate_presence_of(:youtube_id) }
   it { should validate_presence_of(:category_id) }
   it { should validate_presence_of(:sub_category_id) }
-  it { should validate_uniqueness_of(:youtube_id).scoped_to(:category_id, :sub_category_id) }
-  it { should validate_uniqueness_of(:sub_category_id).scoped_to(:category_id) }
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:embed_url) }
+  it { should validate_presence_of(:thumbnail_url) }
+
 
 end
