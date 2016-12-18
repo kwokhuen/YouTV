@@ -6,19 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = Category.create!([{name: "Comedy"}])
-
-sub_categories = SubCategory.create!([
-  {category_id: 1, name: "Stand-Up"},
-  {category_id: 1, name: "Movies"},
-  {category_id: 1, name: "Animals"},
-  {category_id: 1, name: "Fail"}])
-
-videos = Video.create!([
-  {youtube_id: 1, category_id: 1, sub_category_id: 1},
-  {youtube_id: 2, category_id: 1, sub_category_id: 2},
-  {youtube_id: 3, category_id: 1, sub_category_id: 3},
-  {youtube_id: 4, category_id: 1, sub_category_id: 4}])
+Yt.configure do |config|
+  config.api_key = ''
+end
 
 users = User.create!([
   {full_name: "Chris", email: "chris@gmail.com", password: "123"},
@@ -26,20 +16,51 @@ users = User.create!([
   {full_name: "Ben", email: "ben@gmail.com", password: "123"},
   {full_name: "Ori", email: "ori@gmail.com", password: "123"}])
 
-video_histories = VideoHistory.create!([
-  {user_id: 1, video_id: 1},
-  {user_id: 2, video_id: 2},
-  {user_id: 3, video_id: 3},
-  {user_id: 4, video_id: 4}])
+Category.create!([{name: "Comedy"}])
 
-favorites = Favorite.create!([
-  {video_id: 1, user_id: 1},
-  {video_id: 2, user_id: 1},
-  {video_id: 2, user_id: 2},
-  {video_id: 1, user_id: 2}])
+SubCategory.create!([
+                                      {category_id: 1, name: "Comedy Central"},
+                                      {category_id: 1, name: "Comedy Times"},
+                                      {category_id: 1, name: "Laugh Factory"},
+                                      {category_id: 1, name: "Smosh"},
+                                      {category_id: 1, name: "Fail Army"},
+                                      {category_id: 1, name: "College Humor"}
+                                    ])
 
-preferences = Preference.create!([
-  {user_id: 1, sub_category_id: 1, weight: 110},
-  {user_id: 2, sub_category_id: 1, weight: 100},
-  {user_id: 3, sub_category_id: 1, weight: 90},
-  {user_id: 4, sub_category_id: 1, weight: 80}])
+# Pull videos from commedy central and store in our database
+channel = Yt::Channel.new id:  'UCUsN5ZwHx2kILm84-jPDeXw'
+
+array = []
+channel.videos.take(100).each {|video| array << {youtube_id: video.id, title: video.title, description: video.description, thumbnail_url: video.thumbnail_url, embed_url: video.embed_html, category_id: 1, sub_category_id: 1}}
+array.each {|data| Video.create!(data)}
+
+
+# Comedy Time
+channel = Yt::Channel.new id:  'UCUg9Iv_KnZwTulS0cEi_mJQ'
+array = []
+channel.videos.take(100).each {|video| array << {youtube_id: video.id, title: video.title, description: video.description, thumbnail_url: video.thumbnail_url, embed_url: video.embed_html, category_id: 1, sub_category_id: 2}}
+array.each {|data| Video.create!(data)}
+
+# Laugh Factory
+channel = Yt::Channel.new id:  'UCxyCzPY2pjAjrxoSYclpuLg'
+array = []
+channel.videos.take(100).each {|video| array << {youtube_id: video.id, title: video.title, description: video.description, thumbnail_url: video.thumbnail_url, embed_url: video.embed_html, category_id: 1, sub_category_id: 3}}
+array.each {|data| Video.create!(data)}
+
+# SMOSH
+channel = Yt::Channel.new id:  'UCY30JRSgfhYXA6i6xX1erWg'
+array = []
+channel.videos.take(100).each {|video| array << {youtube_id: video.id, title: video.title, description: video.description, thumbnail_url: video.thumbnail_url, embed_url: video.embed_html, category_id: 1, sub_category_id: 4}}
+array.each {|data| Video.create!(data)}
+
+# Fail Army
+channel = Yt::Channel.new id:  'UCPDis9pjXuqyI7RYLJ-TTSA'
+array = []
+channel.videos.take(100).each {|video| array << {youtube_id: video.id, title: video.title, description: video.description, thumbnail_url: video.thumbnail_url, embed_url: video.embed_html, category_id: 1, sub_category_id: 5}}
+array.each {|data| Video.create!(data)}
+
+# College Humor
+channel = Yt::Channel.new id:  'UCPDXXXJj9nax0fr0Wfc048g'
+array = []
+channel.videos.take(100).each {|video| array << {youtube_id: video.id, title: video.title, description: video.description, thumbnail_url: video.thumbnail_url, embed_url: video.embed_html, category_id: 1, sub_category_id: 6}}
+array.each {|data| Video.create!(data)}
