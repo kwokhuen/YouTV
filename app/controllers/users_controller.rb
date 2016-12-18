@@ -9,11 +9,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    if @user.valid?
-      redirect_to action: :login
-    else
-      @errors = @user.errors.full_messages
-      render :register
+    if request.xhr?
+      if @user.valid?
+        redirect_to action: :login
+      else
+        @errors = @user.errors.full_messages
+        render :register
+      end
     end
   end
 

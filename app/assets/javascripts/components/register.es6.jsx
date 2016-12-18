@@ -32,31 +32,15 @@ class Register extends React.Component {
         password:  this.refs.fullName.value
       }
     }
-
     if (this.state.errors === "") {
-      fetch('/user/register', {
-        method: "post",
-        body: data,
-        headers: {
-          'X-CSRF'       : document.getElementsByName("csrf-token")[0].content,
-          'Accept'       : 'application/json',
-          'Content-Type' : 'application/json'
-        },
-        credentials: 'same-origin'
+      $.ajax({
+        url: "/user/register",
+        type: "post",
+        data: data
       })
-      // .then(response=>{
-      //   return response.json()
-      // })
-      // .then(json=>{
-      //   console.log(json)
-      // })
-      // .catch(err=>{
-      //   console.log("Shit")
-      //   console.log(err)
-      // })
     }
-
   }
+
 
   render () {
     return (
