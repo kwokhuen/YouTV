@@ -2,15 +2,20 @@ class UsersController < ApplicationController
 
   def register
     @user = User.new
+    render component: "Register", props: {
+      user: @user
+    }, tag: 'div'
   end
 
   def create
     @user = User.create(user_params)
-    if @user.valid?
-      redirect_to action: :login
-    else
-      @errors = @user.errors.full_messages
-      render :register
+    if request.xhr?
+      if @user.valid?
+        redirect_to action: :login
+      else
+        @errors = @user.errors.full_messages
+        render :register
+      end
     end
   end
 
