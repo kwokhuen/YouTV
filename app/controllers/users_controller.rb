@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   def register
     @user = User.new
+    render component: "Register", props: {
+      user: @user
+    }, tag: 'div'
   end
 
   def create

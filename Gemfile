@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -49,3 +48,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# React Stuff
+gem 'react-rails'
+gem 'sprockets'
+gem 'sprockets-es6'
+gem 'babel-transpiler'
