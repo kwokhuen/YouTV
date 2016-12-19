@@ -12,9 +12,6 @@ class Login extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(){
-    this.setState({eMail: this.refs.eMail.value})
-  }
 
   handleLogin(e){
     e.preventDefault();
@@ -52,6 +49,9 @@ class Login extends React.Component {
     }
   }
 
+  handleChange(){
+    this.setState({eMail: this.refs.eMail.value})
+  }
 
   render(){
     return(

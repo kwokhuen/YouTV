@@ -6,10 +6,12 @@ class Header extends React.Component {
     this.state = {
       hiddenLogin: true,
       hiddenRegister: true,
+      message: "",
       loggedIn: false,
       eMail: "",
       user: {}
     }
+
     this.clickRegister = this.clickRegister.bind(this)
     this.clickLogin = this.clickLogin.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
@@ -30,6 +32,7 @@ class Header extends React.Component {
     }
   }
 
+
   handleRegister(data){
     alert(data.message)
     this.clickLogin()
@@ -38,9 +41,8 @@ class Header extends React.Component {
   }
 
   handleLogin(data){
-      console.log(data)
-      // this.setState({loggedIn: true})
-      // this.setState({user: data.user})
+      this.setState({user: data.user})
+      console.log(this.state.user)
   }
 
   render(){

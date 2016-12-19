@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
   respond_to :json
 
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params["user"]["email"])
     if @user && @user.authenticate(params["user"]["password"])
       session[:user_id] = @user.id
-      render json: {sessionId: session[:user_id], user: @user}
+      render json: {name: @user.full_name, userId: @user.id}
     else
       render json: {message: "Invalid Email or Password."}
     end

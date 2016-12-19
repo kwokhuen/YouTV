@@ -31,7 +31,7 @@ class Register extends React.Component {
       user: {
         full_name: this.refs.fullName.value,
         email:     this.refs.eMail.value,
-        password:  this.refs.fullName.value
+        password:  this.refs.password.value
       }
     }
     if (this.state.errors === "") {
