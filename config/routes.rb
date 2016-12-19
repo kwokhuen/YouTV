@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get 'user/login' => "users#login"
   post 'user/login' => "users#validate"
   get 'user/logout' => "users#logout"
+
+	# routes for videos
+	resources 'videos'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
