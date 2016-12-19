@@ -9,7 +9,7 @@ class Header extends React.Component {
       message: "",
       loggedIn: false,
       eMail: "",
-      user: {}
+      user: ""
     }
 
     this.clickRegister = this.clickRegister.bind(this)
@@ -41,8 +41,13 @@ class Header extends React.Component {
   }
 
   handleLogin(data){
-      this.setState({user: data.user})
+    if (!data.name) {
+      // this.setState({message: data.message})
+      alert(data.message)
+    }else {
+      this.setState({user: data})
       console.log(this.state.user)
+      }
   }
 
   render(){

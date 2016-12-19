@@ -1,6 +1,9 @@
 class Body extends React.Component {
 
   render(){
-    return(<h1>Hello Again</h1>)
+    return(
+      <div>
+        <h1>Body</h1>
+      </div>)
   }
 }
