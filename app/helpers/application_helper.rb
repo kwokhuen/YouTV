@@ -12,23 +12,23 @@ module ApplicationHelper
     end
   end
 
-  def random_hundred_videos(category_id)
-    current_user.preferences
-
-  end
 
   def thumbs_up(sub_category_id)
+    category_id = SubCategory.find(sub_category_id).category_id
     preference = User.first.preferences.find_by(sub_category_id: sub_category_id)
     preference.weight += 10
     preference.save
+    weighted_videos_array(category_id)
   end
 
   def thumbs_down(sub_category_id)
+    category_id = SubCategory.find(sub_category_id).category_id
     preference = User.first.preferences.find_by(sub_category_id: sub_category_id)
     if preference.weight > 10
       preference.weight -= 10
       preference.save
     end
+    weighted_videos_array(category_id)
   end
 
   def create_preference_hash(category_id)
