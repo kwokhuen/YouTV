@@ -1,22 +1,21 @@
+require 'pry'
 class UsersController < ApplicationController
+  respond_to :json
 
   def register
-    @user = User.new
-    render component: "Register", props: {
-      user: @user
-    }, tag: 'div'
+    # @user = User.new
+    # render component: "Register", props: {user: @user}, tag: 'div'
   end
 
   def create
     @user = User.create(user_params)
-    if request.xhr?
+    @message = "Thank you for Registering."
       if @user.valid?
-        redirect_to action: :login
+        render json: {message: "Thank you for Registering.", user: @user}
       else
         @errors = @user.errors.full_messages
         render :register
       end
-    end
   end
 
   def login
@@ -27,10 +26,9 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params["user"]["email"])
     if @user && @user.authenticate(params["user"]["password"])
       session[:user_id] = @user.id
-      redirect_to :root #or someplace else
+      render json: {name: @user.full_name, userId: @user.id}
     else
-      @error = "Incorrect Username/Password"
-      render :login
+      render json: {message: "Invalid Email or Password."}
     end
   end
 
