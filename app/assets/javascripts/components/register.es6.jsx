@@ -3,11 +3,13 @@ class Register extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      errors: ""
+      errors: "",
+      hidden: true
     }
 
     this.verifyChange = this.verifyChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
 
   }
 
@@ -38,6 +40,27 @@ class Register extends React.Component {
         type: "post",
         data: data
       })
+      .done((response)=>{
+        this.props.handleRegister(response)
+        $(".register-form").each(function(){
+          this.reset()
+        });
+      })
+    }
+  }
+
+  componentDidMount(){
+    $(".register-form").hide()
+  }
+
+  handleClick() {
+    if (this.state.hidden === true) {
+      $(".register-form").show()
+      this.setState({hidden: false})
+    }
+    else {
+     $(".register-form").hide()
+     this.setState({hidden: true})
     }
   }
 
@@ -45,14 +68,9 @@ class Register extends React.Component {
   render () {
     return (
       <div className="register">
-      <form>
+      <h3 onClick={this.handleClick}>Register</h3>
+      <form className="register-form">
         <table>
-          <thead>
-            <tr>
-              <th colSpan="2">Register</th>
-              <th></th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
               <td><label>Full Name:</label></td>
@@ -103,6 +121,6 @@ class Register extends React.Component {
 
 }
 
-Register.propTypes = {
-  user: React.PropTypes.object.isRequired
-}
+// Register.propTypes = {
+//   user: React.PropTypes.object.isRequired
+// }

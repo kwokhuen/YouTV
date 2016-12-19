@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	root to: "videos#index"
+	root to: "site#index"
 
   get 'user/register' => "users#register"
   post 'user/register' => "users#create"
