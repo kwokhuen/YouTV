@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def logout
     reset_session
     @user = nil
-    redirect_to :root
+    render json: {user: @user}
   end
 
 private
