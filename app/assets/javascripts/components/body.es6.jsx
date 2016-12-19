@@ -4,6 +4,7 @@ class Body extends React.Component {
     return(
       <div>
         <h1>Body</h1>
+        <SimpleSlider />
       </div>)
   }
 }
