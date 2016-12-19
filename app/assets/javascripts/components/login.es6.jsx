@@ -67,8 +67,7 @@ class Login extends React.Component {
               name="user[email]"
               placeholder="example@gmail.com"
               ref="eMail"
-              value={this.state.eMail}
-              onChange={this.handleChange}/></td>
+              /></td>
             </tr>
             <tr>
               <td><label>Password:</label></td>
