@@ -22,7 +22,7 @@ class ModalRegister extends React.Component {
     var Button = ReactBootstrap.Button;
     return (
       <div>
-      <Button onClick={this.open} bsStyle="primary">Register</Button>
+      <Button onClick={this.open} bsStyle="danger">Register</Button>
       <Modal show={this.state.showModal} onHide={this.close}>
         <Modal.Header closeButton>
           <Modal.Title>Register</Modal.Title>

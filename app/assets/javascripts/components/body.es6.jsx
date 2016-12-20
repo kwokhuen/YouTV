@@ -20,7 +20,8 @@ class Body extends React.Component {
       </div>)
     } else {
       return(
-        <LangingPage />
+        <div className="landingpage">
+        <LandingPage />
 
         </div>)
     }

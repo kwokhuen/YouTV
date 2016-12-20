@@ -36,9 +36,12 @@ class NavigationBar extends React.Component {
     return(
       <div>
         <nav>
+          <div className="logo">
+            <img src="logo4.png" />
+          </div>
           <div>
-            <ModalRegister
-              handleRegister={this.handleRegister}/>
+            {/* <ModalRegister
+              handleRegister={this.handleRegister}/> */}
               <ModalLogin
                 afterLogin={this.props.afterLogin}
                 handleLogin={this.handleLogin}/>
