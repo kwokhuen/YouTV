@@ -25,6 +25,10 @@ class Main extends React.Component {
           afterLogin={this.afterLogin}
           loggedIn={this.state.loggedIn}
           user={this.state.user}/>
+          <Body
+          afterLogin={this.afterLogin}
+          loggedIn={this.state.loggedIn}
+          user={this.state.user}/>
       </div>
       )
   }
