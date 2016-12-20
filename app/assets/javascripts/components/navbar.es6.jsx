@@ -36,15 +36,18 @@ class NavigationBar extends React.Component {
     return(
       <div>
         <nav>
+          <div className="logo">
+            <img src="logo4.png" />
+          </div>
           <div>
-            <ModalRegister
-              handleRegister={this.handleRegister}/>
+            {/* <ModalRegister
+              handleRegister={this.handleRegister}/> */}
               <ModalLogin
                 afterLogin={this.props.afterLogin}
                 handleLogin={this.handleLogin}/>
-              </div>
-            </nav>
           </div>
+        </nav>
+      </div>
         )
   } else {
     return(
@@ -54,9 +57,9 @@ class NavigationBar extends React.Component {
             <h4>{this.props.user.name}</h4>
               <Logout
               afterLogout={this.afterLogout}/>
-              </div>
-            </nav>
           </div>
+        </nav>
+      </div>
         )
     }
   }

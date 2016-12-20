@@ -21,11 +21,11 @@ class Body extends React.Component {
     } else {
       return(
 
-        <div>
-          <LandingPage />
-          <VideoOverlay />
-        </div>
-        )
+        <div className="landingpage">
+        <LandingPage />
+        <VideoOverlay />
+        </div>)
+
     }
   }
 }

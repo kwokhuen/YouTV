@@ -1,24 +1,109 @@
+html, body {
+  height: 93%;
+}
+
 body {
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('background-image.jpg') no-repeat center center fixed;
+  // background: url("background-image.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  // -o-background-size: cover;
+  background-size: cover;
+}
+
+main {
   height: 100%;
-  background-color: yellow;
+  margin-top: 50px;
 }
 
 nav {
   position: fixed;
   width: 100%;
-  background-color: rgba(0,0,0,.5);
-  height: 50px;
+  background-color: rgba(0,0,0,0.1);
+  height: 55px;
   z-index: 99;
+  top: 0;
 }
 
-nav div a {
+nav div button {
   text-decoration: none;
   color: #fff;
   margin-right: 30px;
   line-height: 50px;
   float:right;
+  margin-top: 8px;
 }
 
-.Section {
+main > div {
+  height: 100%;
+}
 
+main > div > div {
+  height: 100%;
+}
+
+.landingpage {
+  height: 50%;
+  opacity: 1;
+}
+
+.wrapper {
+  position: absolute;
+  transform: translate(0,250%);
+  font-size: 1.8vw;
+  z-index: 13;
+  left: 0;
+  margin: 0 3%;
+  width: 94%;
+
+}
+
+.slogan {
+  color: #fff;
+  margin: 0 0 .2em;
+  line-height: 1.1em;
+  font-weight: 700;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.long-slogan {
+  color: #fff;
+  line-height: 1.1em;
+  font-weight: 400;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+body > main > div > div > div:nth-child(1) > nav > div > div:nth-child(1) > button {
+  background-image: none;
+  background-color: #e50914;
+  font-family: Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: none;
+}
+.landingpage > div > div:nth-child(2) > div > button {
+  background-image: none;
+  background-color: #e50914;
+  font-family: Arial,sans-serif;
+  padding: 12px 2em;
+  min-width: 112px;
+  min-height: 44px;
+  font-weight: 700;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 50px;
+  float: left;
+}
+
+.logo img {
+  width: 300px;
 }
