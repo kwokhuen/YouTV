@@ -13,17 +13,13 @@ class Logout extends React.Component {
       url: "/user/logout"
     })
     .done((response)=>{
-      this.props.handleLogout(response)
+      this.props.afterLogout(response)
     })
   }
 
   render(){
     return(
-      <div className="logout">
         <h4 onClick={this.handleLogout}>Logout</h4>
-      </div>
     )
   }
-
 }
- // onClick={this.handleLogout}
