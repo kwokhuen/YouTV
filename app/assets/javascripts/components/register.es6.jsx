@@ -4,12 +4,22 @@ class Register extends React.Component {
     super(props);
     this.state = {
       errors: "",
-      hidden: true
+      showModal: false
     }
 
     this.verifyChange = this.verifyChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.close = this.close.bind(this)
+    this.open = this.open.bind(this)
 
+  }
+
+  close() {
+    this.setState({ showModal: false });
+  }
+
+  open() {
+    this.setState({ showModal: true });
   }
 
   verifyChange(){
@@ -26,6 +36,7 @@ class Register extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    this.setState({ showModal: false });
     const data = {
       user: {
         full_name: this.refs.fullName.value,
@@ -49,9 +60,16 @@ class Register extends React.Component {
   }
 
   render () {
+    var Modal = ReactBootstrap.Modal;
+    var Button = ReactBootstrap.Button;
     return (
       <div className="register">
-      <h3>Register</h3>
+      <h4 onClick={this.open}>Register</h4>
+      <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal.Header closeButton>
+       <Modal.Title>Register</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
       <form className="register-form">
         <table>
           <tbody>
@@ -98,6 +116,8 @@ class Register extends React.Component {
         </table>
               <input type="submit" value="Register" onClick={this.handleSubmit} />
       </form>
+      </Modal.Body>
+        </Modal>
       </div>
       );
   }
