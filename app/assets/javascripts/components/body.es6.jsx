@@ -22,6 +22,7 @@ class Body extends React.Component {
       return(
         <div>
           <LandingPage />
+          <VideoOverlay />
         </div>)
     }
   }
