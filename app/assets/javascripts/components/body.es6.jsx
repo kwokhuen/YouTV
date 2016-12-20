@@ -2,7 +2,12 @@ class Body extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state={}
+    this.handleCategory = this.handleCategory.bind(this)
+  }
 
+  handleCategory(response) {
+    console.log(response)
   }
 
   render(){
@@ -10,7 +15,8 @@ class Body extends React.Component {
     return(
       <div>
         <h1>Categories</h1>
-        <SimpleSlider />
+        <SimpleSlider
+        handleCategory={this.handleCategory}/>
       </div>)
     } else {
       return(

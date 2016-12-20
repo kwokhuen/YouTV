@@ -15,7 +15,6 @@ class Header extends React.Component {
 
   handleRegister(data){
     alert(data.message)
-    this.clickLogin()
     $(".login-form").show()
   }
 

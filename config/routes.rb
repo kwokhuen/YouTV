@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'user/logout' => "users#logout"
 
 	# routes for videos
-	resources 'videos'
+  get 'video/thumbs_up' => 'videos#thumbs_up'
+  get 'video/category' => 'videos#pick_a_category'
+	# resources 'videos'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
