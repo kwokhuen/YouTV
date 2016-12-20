@@ -7,27 +7,26 @@ class Main extends React.Component {
       loggedIn: false,
       user: ""
     }
-
-    this.handleLogin = this.handleLogin.bind(this)
-
+    this.afterLogin = this.afterLogin.bind(this)
   }
 
-  handleLogin(data){
+  afterLogin(data){
     if (!data.name) {
       alert(data.message)
     } else {
       this.setState({user: data, loggedIn: true})
-      }
+    }
   }
 
   render(){
     return (
       <div>
-        <Header
-          handleLogin={this.handleLogin}
+          <NavigationBar
+          afterLogin={this.afterLogin}
           loggedIn={this.state.loggedIn}
           user={this.state.user}/>
-        <Body
+          <Body
+          afterLogin={this.afterLogin}
           loggedIn={this.state.loggedIn}
           user={this.state.user}/>
       </div>
