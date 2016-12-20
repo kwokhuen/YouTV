@@ -28,7 +28,8 @@ class Main extends React.Component {
           loggedIn={this.state.loggedIn}
           user={this.state.user}/>
         <Body
-          loggedIn={this.state.loggedIn}/>
+          loggedIn={this.state.loggedIn}
+          user={this.state.user}/>
       </div>
       )
   }

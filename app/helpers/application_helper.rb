@@ -15,7 +15,7 @@ module ApplicationHelper
 
   def thumbs_up(sub_category_id)
     category_id = SubCategory.find(sub_category_id).category_id
-    preference = User.first.preferences.find_by(sub_category_id: sub_category_id)
+    preference = @user.preferences.find_by(sub_category_id: sub_category_id)
     preference.weight += 10
     preference.save
     weighted_videos_array(category_id)
@@ -23,7 +23,7 @@ module ApplicationHelper
 
   def thumbs_down(sub_category_id)
     category_id = SubCategory.find(sub_category_id).category_id
-    preference = User.first.preferences.find_by(sub_category_id: sub_category_id)
+    preference = @user.preferences.find_by(sub_category_id: sub_category_id)
     if preference.weight > 10
       preference.weight -= 10
       preference.save
@@ -32,7 +32,7 @@ module ApplicationHelper
   end
 
   def create_preference_hash(category_id)
-    preferences = User.first.preferences
+    preferences = @user.preferences
     array = []
     Category.find(category_id).sub_categories.map{|subcategory| subcategory.id}.each do |sub_category_id|
       array << preferences.find_by(sub_category_id: sub_category_id)
