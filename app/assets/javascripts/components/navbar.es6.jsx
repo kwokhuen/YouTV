@@ -42,9 +42,9 @@ class NavigationBar extends React.Component {
               <ModalLogin
                 afterLogin={this.props.afterLogin}
                 handleLogin={this.handleLogin}/>
-              </div>
-            </nav>
           </div>
+        </nav>
+      </div>
         )
   } else {
     return(
@@ -54,9 +54,9 @@ class NavigationBar extends React.Component {
             <h4>{this.props.user.name}</h4>
               <Logout
               afterLogout={this.afterLogout}/>
-              </div>
-            </nav>
           </div>
+        </nav>
+      </div>
         )
     }
   }
