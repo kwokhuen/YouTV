@@ -3,14 +3,25 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      errors: ""
+      errors: "",
+      showModal: false
     }
     this.handleLogin = this.handleLogin.bind(this)
+    this.close = this.close.bind(this)
+    this.open = this.open.bind(this)
+  }
+
+  close() {
+  this.setState({ showModal: false });
+  }
+
+  open() {
+    this.setState({ showModal: true });
   }
 
   handleLogin(e){
     e.preventDefault();
-
+    this.setState({ showModal: false });
     const payload = {
       user: {
         email:     this.refs.eMail.value,
@@ -31,9 +42,16 @@ class Login extends React.Component {
 
 
   render(){
+    var Modal = ReactBootstrap.Modal;
+    var Button = ReactBootstrap.Button;
     return(
       <div className="login">
-      <h3>Login</h3>
+      <h4 onClick={this.open}>Login</h4>
+      <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal.Header closeButton>
+      <Modal.Title>Login</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
       <form className="login-form">
         <table>
           <tbody>
@@ -64,6 +82,8 @@ class Login extends React.Component {
         </table>
               <input type="submit" value="Login" onClick={this.handleLogin} />
       </form>
+      </Modal.Body>
+      </Modal>
       </div>
       );
   }

@@ -31,34 +31,60 @@ class Header extends React.Component {
   }
 
   render(){
+    var Navbar = ReactBootstrap.Navbar
+    var Nav = ReactBootstrap.Nav
+    var NavItem = ReactBootstrap.NavItem
+    const logoStyle = {
+      padding: "0",
+      marginTop: "10px"
+    }
+
     if (!this.props.loggedIn) {
     return(
       <div>
-        <ul>
-          <li className="register-button">
-            <Register
-            handleRegister={this.handleRegister}
-            hiddenRegister={this.state.hiddenRegister}/>
-          </li>
-          <li className="login-button">
-            <Login
-            handleLogin={this.handleLogin}/>
-          </li>
-        </ul>
+        <Navbar inverse>
+          <Navbar.Header>
+          <Navbar.Brand>
+            <img src={'/logo.png'} style={logoStyle}/>
+          </Navbar.Brand>
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+             <NavItem>
+              <Register
+                handleRegister={this.handleRegister}
+                hiddenRegister={this.state.hiddenRegister}/>
+            </NavItem>
+            <NavItem>
+              <Login
+                handleLogin={this.handleLogin}/>
+            </NavItem>
+            </Nav>
+            </Navbar.Collapse>
+          </Navbar>
       </div>
       )
-  } else {
+    } else {
     return(
-      <div>
-      <ul>
-        <li>
-          <h3>{this.props.user.name}</h3>
-        </li>
-        <li>
-          <Logout
-            handleLogout={this.handleLogout}/>
-        </li>
-        </ul>
+        <div>
+        <Navbar inverse>
+          <Navbar.Header>
+          <Navbar.Brand>
+            <img src={'/logo.png'} style={logoStyle}/>
+          </Navbar.Brand>
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+             <NavItem>
+              <h4>{this.props.user.name}</h4>
+            </NavItem>
+            <NavItem>
+              <Logout
+             handleLogout={this.handleLogout}/>
+            </NavItem>
+            </Nav>
+            </Navbar.Collapse>
+          </Navbar>
       </div>
       )
   }
