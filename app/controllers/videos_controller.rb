@@ -4,16 +4,16 @@ class VideosController < ApplicationController
 
   def pick_a_category
     @category = Category.find(params["category"]["category_id"].to_i)
-    render json: {youtube_id: @category.pick_a_video(@user)[:youtube_id], sub_category_id: @category.pick_a_video(@user)[:sub_category_id]}
+    render json: {youtube_id: @category.pick_a_video(@user)[:youtube_id], sub_category_id: @category.pick_a_video(@user)[:sub_category_id], category_id: @category.id}
   end
 
   def thumbs_up
-    @preference = Preference.find_by(sub_category_id: params["sub_category_id"], user_id: @user.id)
+    @preference = Preference.find_by(sub_category_id: params["subCategoryId"], user_id: @user.id)
     @preference.thumbs_up
   end
 
   def thumbs_down
-    @preference = Preference.find_by(sub_category_id: params["sub_category_id"], user_id: @user.id)
+    @preference = Preference.find_by(sub_category_id: params["subCategoryId"], user_id: @user.id)
     @preference.thumbs_down
   end
 

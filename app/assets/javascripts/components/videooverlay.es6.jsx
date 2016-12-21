@@ -2,19 +2,27 @@ class VideoOverlay extends React.Component {
 
   constructor(props){
     super(props)
-    this.state={}
+    this.state={
+      thumbsUpClass: "fa fa-thumbs-o-up fa-5x",
+      thumbsDownClass: "fa fa-thumbs-o-down fa-5x",
+      heartClass: "fa fa-heart-o fa-5x"
+    }
 
     this.deployVideo = this.deployVideo.bind(this)
     this.destroyVideo = this.destroyVideo.bind(this)
+    this.thumbs_up = this.thumbs_up.bind(this)
+    this.thumbs_down = this.thumbs_down.bind(this)
+    this.next = this.next.bind(this)
+    this.heart = this.heart.bind(this)
 
   }
 
   deployVideo() {
+    this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"})
     this.setState({videoUrl: this.props.videoUrl + "?autoplay=1"})
     jQuery('.mm-product-video-modal-container').addClass('open');
     setTimeout(function() {
       jQuery('.mm-product-video-modal').addClass('open');
-
     }, 250);
   }
 
@@ -25,6 +33,54 @@ class VideoOverlay extends React.Component {
       jQuery('.mm-product-video-modal-container').removeClass('open');
     }, 250);
   }
+
+  thumbs_up(){
+    $.ajax({
+      url: "/video/thumbs_up",
+      type: "post",
+      data: {subCategoryId: this.props.subCategoryId}
+    }).done(()=> {
+      if(this.state.thumbsUpClass === "fa fa-thumbs-o-up fa-5x") {
+        this.setState({thumbsUpClass: "fa fa-thumbs-up fa-5x"})
+      }
+    })
+  }
+
+    thumbs_down(){
+      $.ajax({
+        url: "/video/thumbs_down",
+        type: "post",
+        data: {subCategoryId: this.props.subCategoryId}
+      }).done(()=> {
+        if(this.state.thumbsDownClass === "fa fa-thumbs-o-down fa-5x") {
+          this.setState({thumbsDownClass: "fa fa-thumbs-down fa-5x"})
+        }
+      })
+    }
+
+    next(){
+      $.ajax({
+      method: "get",
+      url: "/video/category",
+      data: {category:{category_id: this.props.categoryId}}
+      }).done((response)=>{
+       this.props.handleCategory(response)
+       $(".mm-launch").click()
+      })
+    }
+
+    heart(){
+      $.ajax({
+      method: "post",
+      url: "/video/favorite",
+      data: {youtube_id: this.props.videoUrl}
+      }).done(()=>{
+       if(this.state.heartClass === "fa fa-heart-o fa-5x") {
+          this.setState({heartClass: "fa fa-heart fa-5x"})
+        }
+      })
+    }
+
 
   render(){
     const buttonStyle = {
@@ -45,13 +101,13 @@ class VideoOverlay extends React.Component {
                 </div>
               </div>
             </div>
-            <i className="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
+            <i onClick={this.next} className="fa fa-chevron-circle-right fa-4x" aria-hidden="true"></i>
           </div>
               <div className="mm-video-overlay" onClick={this.destroyVideo}></div>
               <div className="pref-bar">
-                <i className="fa fa-thumbs-o-down fa-5x" aria-hidden="true"></i>
-                <i className="fa fa-heart-o fa-5x" aria-hidden="true"></i>
-                <i className="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
+                <i onClick={this.thumbs_down} className={this.state.thumbsDownClass} aria-hidden="true"></i>
+                <i className={this.state.heartClass} onClick={this.heart} aria-hidden="true"></i>
+                <i onClick={this.thumbs_up} className={this.state.thumbsUpClass} aria-hidden="true"></i>
               </div>
             </div>
             <div className="mm-launch-container container">

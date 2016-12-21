@@ -4,12 +4,13 @@ class Body extends React.Component {
     super(props);
     this.state={
       videoUrl: "",
-      subCategoryId: ""}
+      subCategoryId: "",
+      categoryId: ""}
     this.handleCategory = this.handleCategory.bind(this)
   }
 
   handleCategory(response) {
-    this.setState({videoUrl: response.youtube_id, subCategoryId: response.sub_category_id})
+    this.setState({videoUrl: response.youtube_id, subCategoryId: response.sub_category_id, categoryId: response.category_id})
   }
 
   render(){
@@ -20,7 +21,10 @@ class Body extends React.Component {
         <SimpleSlider
           handleCategory={this.handleCategory}/>
         <VideoOverlay
-          videoUrl={this.state.videoUrl}/>
+          subCategoryId={this.state.subCategoryId}
+          videoUrl={this.state.videoUrl}
+          categoryId={this.state.categoryId}
+          handleCategory={this.handleCategory}/>
       </div>)
     } else {
       return(
