@@ -14,7 +14,7 @@ class Body extends React.Component {
     if (this.props.loggedIn) {
     return(
       <div>
-        <h1>Categories</h1>
+        <h1 className="header-category">Categories</h1>
         <SimpleSlider
           handleCategory={this.handleCategory}/>
         <VideoOverlay
@@ -29,4 +29,3 @@ class Body extends React.Component {
     }
   }
 }
-
