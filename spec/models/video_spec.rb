@@ -12,8 +12,6 @@ describe Video do
                       category_id: category.id,
                       sub_category_id: sub_category.id,
                       title: "hello",
-                      thumbnail_url: "http://uehfeu.com",
-                      embed_url: "hufiewhfuiewfnw",
                       description: "hello"
                       ) }
   it { should have_many(:video_histories) }
@@ -24,7 +22,6 @@ describe Video do
   it { should validate_presence_of(:category_id) }
   it { should validate_presence_of(:sub_category_id) }
   it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:embed_url) }
   it { should validate_presence_of(:thumbnail_url) }
 
 

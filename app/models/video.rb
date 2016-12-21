@@ -7,7 +7,6 @@ class Video < ApplicationRecord
 	validates :youtube_id, presence: true
 	validates :title, presence: true
 	validates :thumbnail_url, presence: true
-	validates :embed_url, presence: true
 	validates :category_id, presence: true
 	validates :sub_category_id, presence: true
 
