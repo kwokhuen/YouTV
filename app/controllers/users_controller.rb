@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     @message = "Thank you for Registering."
       if @user.valid?
-        render json: {message: "Thank you for Registering.", userId: @user.id}
+        render json: {message: "Thank you for Registering.", user: {name: @user.full_name, userId: @user.id}}
       else
         @errors = @user.errors.full_messages
         render json: {errors: @errors}
@@ -22,19 +22,18 @@ class UsersController < ApplicationController
   end
 
   def validate
-    p params["user"]
     @user = User.find_by(email: params["user"]["email"])
     if @user && @user.authenticate(params["user"]["password"])
       session[:user_id] = @user.id
       render json: {name: @user.full_name, userId: @user.id}
     else
-      render json: {message: "Invalid Email or Password."}
+      render json: { message: "Invalid Email or Password." }
     end
   end
 
   def logout
     reset_session
-    @user = nil
+    @user = ""
     render json: {user: @user}
   end
 
