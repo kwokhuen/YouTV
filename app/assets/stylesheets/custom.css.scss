@@ -9,15 +9,19 @@ body {
   -moz-background-size: cover;
   // -o-background-size: cover;
   background-size: cover;
+  // position: relative;
+
 }
 
 main {
   height: 100%;
-  margin-top: 50px;
+  // margin-top: 50px;
+  position: relative;
+
 }
 
 nav {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   background-color: rgba(0,0,0,0.1);
   height: 55px;
@@ -45,17 +49,22 @@ main > div > div {
 .landingpage {
   height: 50%;
   opacity: 1;
+  position: relative;
+}
+
+.outer-wrapper {
+  margin-top: 70vh;
 }
 
 .wrapper {
-  position: absolute;
-  transform: translate(0,250%);
+  // position: fixed;
+  transform: translate(0,-15%);
   font-size: 1.8vw;
   z-index: 13;
   left: 0;
-  margin: 0 3%;
-  width: 94%;
-
+  margin-left: 6%;
+  width: 85%;
+  position: relative;
 }
 
 .slogan {
@@ -86,7 +95,7 @@ body > main > div > div > div:nth-child(1) > nav > div > div:nth-child(1) > butt
   text-transform: uppercase;
   border: none;
 }
-.landingpage > div > div:nth-child(2) > div > button {
+body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2) > div > button {
   background-image: none;
   background-color: #e50914;
   font-family: Arial,sans-serif;
@@ -106,4 +115,30 @@ body > main > div > div > div:nth-child(1) > nav > div > div:nth-child(1) > butt
 
 .logo img {
   width: 300px;
+}
+
+.about-us {
+  width: 100%;
+  background-color: #1a1a1a;
+  height: 75vh;
+  box-shadow: 0px 0px 5px #888888;
+
+}
+
+.about-us img {
+  width: 30vw;
+  display: block;
+  margin: auto;
+  vertical-align: center;
+}
+
+.about-us-text {
+  width: 50vw;
+  margin: auto;
+  font-size: 1.2em;
+  color: #ffffff;
+  line-height: 1.4em;
+  font-weight: 500;
+  text-shadow: 1px 1px 10px #000;
+  letter-spacing: 0.9px;
 }
