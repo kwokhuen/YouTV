@@ -19,11 +19,17 @@ class VideoOverlay extends React.Component {
 
   deployVideo() {
     this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"})
-    this.setState({videoUrl: this.props.videoUrl + "?autoplay=1"})
+    this.setState({videoUrl: this.props.videoUrl + "?autoplay=1&enablejsapi=1"})
     jQuery('.mm-product-video-modal-container').addClass('open');
     setTimeout(function() {
       jQuery('.mm-product-video-modal').addClass('open');
     }, 250);
+    var ik_player = new YT.Player('iframe')
+    ik_player.addEventListener("onStateChange", (event) => {
+      if (event.data == 0) {
+        this.next()
+      }
+    })
   }
 
   destroyVideo() {
@@ -57,6 +63,7 @@ class VideoOverlay extends React.Component {
         }
       })
     }
+
 
     next(){
       $.ajax({
@@ -97,7 +104,7 @@ class VideoOverlay extends React.Component {
             <div className="mm-product-video-modal dropper">
               <div className="embed-responsive embed-responsive-16by9">
                 <div id="video-placeholder">
-                  <iframe width="480" height="270" src={'//www.youtube.com/embed/' + this.state.videoUrl} frameBorder="0" allowFullScreen></iframe>
+                  <iframe id="iframe" width="480" height="270" src={'//www.youtube.com/embed/' + this.state.videoUrl} frameBorder="0" allowFullScreen></iframe>
                 </div>
               </div>
             </div>

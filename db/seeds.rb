@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Yt.configure do |config|
-  config.api_key = ''
+  config.api_key = 'AIzaSyDWN57DW6-qZp_E7i7t_IdPkiGo5jVwmfk'
 end
 
 Category.create!([
@@ -65,7 +65,7 @@ SubCategory.create!([
                                       {category_id: 6, name: "VanossGaming"},
                                       {category_id: 6, name: "Markiplier"}
                                     ])
-num = 1
+num = 20
 
 ##Comedy##
 # Pull videos from commedy central and store in our database

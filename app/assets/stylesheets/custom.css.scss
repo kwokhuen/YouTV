@@ -119,19 +119,28 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 
 
 .slick-slider {
-  width: 97vw;
+  width: 85vw;
+  margin: auto;
 }
 
 
 .category_title {
   text-align: center;
-  padding-right: 110px;
+  margin-left: auto;
+  margin-right: auto;
   color: #fff;
   text-shadow: 1px 1px 10px #000;
 
 }
 
+.slick-slide {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .slick-slide img {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
   margin-bottom: 20px;
   box-shadow: 2px 4px 3px rgba(0,0,0,2.0);

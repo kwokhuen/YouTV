@@ -139,6 +139,10 @@ iframe {
   margin-bottom: 30px;
 }
 
+.logout{
+  cursor: pointer;
+}
+
 .mm-launch-container h2 {
   font-size: 50px;
   font-weight: 800;
