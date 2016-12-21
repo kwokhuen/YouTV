@@ -37,11 +37,7 @@ SubCategory.create!([
                                       {category_id: 3, name: "Kids TV"},
                                       {category_id: 3, name: "All 4 Tube Kids"},
                                       {category_id: 3, name: "We Are Busy Beavers"},
-                                      {category_id: 3, name: "VideoGyan"}
-
-                                    ])
-
-SubCategory.create!([
+                                      {category_id: 3, name: "VideoGyan"},
                                       {category_id: 4, name: "Munchies"},
                                       {category_id: 4, name: "Rosanna Pansino"},
                                       {category_id: 4, name: "Gordon Ramsay"},
@@ -53,7 +49,6 @@ SubCategory.create!([
                                       {category_id: 4, name: "Simple Cooking Channel"},
                                       {category_id: 5, name: "Conan"},
                                       {category_id: 5, name: "SNL"},
-                                      {category_id: 5, name: "Ellen"},
                                       {category_id: 5, name: "Movieclip Trailer"},
                                       {category_id: 5, name: "TMZ"},
                                       {category_id: 5, name: "Ray William Johnson"},
@@ -69,19 +64,18 @@ SubCategory.create!([
                                       {category_id: 6, name: "Faze Rug"},
                                       {category_id: 6, name: "VanossGaming"},
                                       {category_id: 6, name: "Markiplier"}
-
                                     ])
+num = 1
 
 ##Comedy##
 # Pull videos from commedy central and store in our database
 channel = Yt::Channel.new id:  'UCUsN5ZwHx2kILm84-jPDeXw'
 
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 1,
                                                    sub_category_id: 1}}
 array.each {|data| Video.create!(data)}
@@ -90,11 +84,10 @@ array.each {|data| Video.create!(data)}
 # Comedy Time
 channel = Yt::Channel.new id:  'UCUg9Iv_KnZwTulS0cEi_mJQ'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 1,
                                                    sub_category_id: 2}}
 array.each {|data| Video.create!(data)}
@@ -102,11 +95,10 @@ array.each {|data| Video.create!(data)}
 # Laugh Factory
 channel = Yt::Channel.new id:  'UCxyCzPY2pjAjrxoSYclpuLg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 1,
                                                    sub_category_id: 3}}
 array.each {|data| Video.create!(data)}
@@ -114,11 +106,10 @@ array.each {|data| Video.create!(data)}
 # SMOSH
 channel = Yt::Channel.new id:  'UCY30JRSgfhYXA6i6xX1erWg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 1,
                                                    sub_category_id: 4}}
 array.each {|data| Video.create!(data)}
@@ -126,11 +117,10 @@ array.each {|data| Video.create!(data)}
 # Fail Army
 channel = Yt::Channel.new id:  'UCPDis9pjXuqyI7RYLJ-TTSA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 1,
                                                    sub_category_id: 5}}
 array.each {|data| Video.create!(data)}
@@ -138,11 +128,10 @@ array.each {|data| Video.create!(data)}
 # College Humor
 channel = Yt::Channel.new id:  'UCPDXXXJj9nax0fr0Wfc048g'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 1,
                                                    sub_category_id: 6}}
 array.each {|data| Video.create!(data)}
@@ -152,11 +141,10 @@ array.each {|data| Video.create!(data)}
 # HouseholdHacker - UCI4I6ldZ0jWe7vXpUVeVcpg
 channel = Yt::Channel.new id:  'UCI4I6ldZ0jWe7vXpUVeVcpg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 2,
                                                    sub_category_id: 7}}
 array.each {|data| Video.create!(data)}
@@ -164,11 +152,10 @@ array.each {|data| Video.create!(data)}
 # Discovery - UCqOoboPm3uhY_YXhvhmL-WA
 channel = Yt::Channel.new id:  'UCqOoboPm3uhY_YXhvhmL-WA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 2,
                                                    sub_category_id: 8}}
 array.each {|data| Video.create!(data)}
@@ -176,11 +163,10 @@ array.each {|data| Video.create!(data)}
 # National Geographic - UCpVm7bg6pXKo1Pr6k5kxG9A
 channel = Yt::Channel.new id:  'UCpVm7bg6pXKo1Pr6k5kxG9A'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 2,
                                                    sub_category_id: 9}}
 array.each {|data| Video.create!(data)}
@@ -188,11 +174,10 @@ array.each {|data| Video.create!(data)}
 # Howcast - UCSpVHeDGr9UbREhRca0qwsA
 channel = Yt::Channel.new id:  'UCSpVHeDGr9UbREhRca0qwsA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 2,
                                                    sub_category_id: 10}}
 array.each {|data| Video.create!(data)}
@@ -200,11 +185,10 @@ array.each {|data| Video.create!(data)}
 # Vsauce - UC6nSFpj9HTCZ5t-N3Rm3-HA
 channel = Yt::Channel.new id:  'UC6nSFpj9HTCZ5t-N3Rm3-HA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 2,
                                                    sub_category_id: 11}}
 array.each {|data| Video.create!(data)}
@@ -212,11 +196,10 @@ array.each {|data| Video.create!(data)}
 # BBC Earth - UCwmZiChSryoWQCZMIQezgTg
 channel = Yt::Channel.new id:  'UCwmZiChSryoWQCZMIQezgTg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 2,
                                                    sub_category_id: 12}}
 array.each {|data| Video.create!(data)}
@@ -226,11 +209,10 @@ array.each {|data| Video.create!(data)}
 # HobbyKidsTV - UCc-2P5tCezbxegb7gxp6EXg
 channel = Yt::Channel.new id:  'UCc-2P5tCezbxegb7gxp6EXg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 3,
                                                    sub_category_id: 13}}
 array.each {|data| Video.create!(data)}
@@ -238,11 +220,10 @@ array.each {|data| Video.create!(data)}
 # The Kids Club - UC_pZxiIq8BRJwG55Wt83WOw
 channel = Yt::Channel.new id:  'UC_pZxiIq8BRJwG55Wt83WOw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 3,
                                                    sub_category_id: 14}}
 array.each {|data| Video.create!(data)}
@@ -250,11 +231,10 @@ array.each {|data| Video.create!(data)}
 # Kids TV - UC7Pq3Ko42YpkCB_Q4E981jw
 channel = Yt::Channel.new id:  'UC7Pq3Ko42YpkCB_Q4E981jw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 3,
                                                    sub_category_id: 15}}
 array.each {|data| Video.create!(data)}
@@ -262,11 +242,10 @@ array.each {|data| Video.create!(data)}
 # All 4 Tube Kids - UCAsMIu8JRvINkUa09iyS2Cw
 channel = Yt::Channel.new id:  'UCAsMIu8JRvINkUa09iyS2Cw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 3,
                                                    sub_category_id: 16}}
 array.each {|data| Video.create!(data)}
@@ -274,23 +253,21 @@ array.each {|data| Video.create!(data)}
 # We Are Busy Beavers - UCbt63GNsB5wet6NO3dmhssA
 channel = Yt::Channel.new id:  'UCbt63GNsB5wet6NO3dmhssA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 3,
                                                    sub_category_id: 17}}
 array.each {|data| Video.create!(data)}
 
 # VideoGyan - UCs0upBDG-dCAxy8_VDPE5XA
-channel = Yt::Channel.new id:  'UCs0upBDG-dCAxy8_VDPE5X'
+channel = Yt::Channel.new id:  'UCs0upBDG-dCAxy8_VDPE5XA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 3,
                                                    sub_category_id: 18}}
 array.each {|data| Video.create!(data)}
@@ -300,11 +277,10 @@ array.each {|data| Video.create!(data)}
 # Munchies - UCaLfMkkHhSA_LaCta0BzyhQ
 channel = Yt::Channel.new id:  'UCaLfMkkHhSA_LaCta0BzyhQ'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 19}}
 array.each {|data| Video.create!(data)}
@@ -312,11 +288,10 @@ array.each {|data| Video.create!(data)}
 # Rosanna Pansino - UCjwmbv6NE4mOh8Z8VhPUx1Q
 channel = Yt::Channel.new id:  'UCjwmbv6NE4mOh8Z8VhPUx1Q'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 20}}
 array.each {|data| Video.create!(data)}
@@ -324,11 +299,10 @@ array.each {|data| Video.create!(data)}
 # Gordon Ramsay - UCIEv3lZ_tNXHzL3ox-_uUGQ
 channel = Yt::Channel.new id:  'UCIEv3lZ_tNXHzL3ox-_uUGQ'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 21}}
 array.each {|data| Video.create!(data)}
@@ -336,11 +310,10 @@ array.each {|data| Video.create!(data)}
 # Cookies Cupcakes and Cardio - UCg-YSRB6TsIq-c5PUZ0F1Jg
 channel = Yt::Channel.new id:  'UCg-YSRB6TsIq-c5PUZ0F1Jg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 22}}
 array.each {|data| Video.create!(data)}
@@ -348,11 +321,10 @@ array.each {|data| Video.create!(data)}
 # How to Cook That - UCsP7Bpw36J666Fct5M8u-ZA
 channel = Yt::Channel.new id:  'UCsP7Bpw36J666Fct5M8u-ZA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 23}}
 array.each {|data| Video.create!(data)}
@@ -360,11 +332,10 @@ array.each {|data| Video.create!(data)}
 # Laura in the Kitchen - UCNbngWUqL2eqRw12yAwcICg
 channel = Yt::Channel.new id:  'UCNbngWUqL2eqRw12yAwcICg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 24}}
 array.each {|data| Video.create!(data)}
@@ -372,11 +343,10 @@ array.each {|data| Video.create!(data)}
 # My Cupcake Addiction - UCxytOEPP99jj8mqVGAO7haQ
 channel = Yt::Channel.new id:  'UCxytOEPP99jj8mqVGAO7haQ'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 25}}
 array.each {|data| Video.create!(data)}
@@ -384,11 +354,10 @@ array.each {|data| Video.create!(data)}
 # Sanjeev Kapoor Khazana - UCmoX4QULJ9MB00xW4coMiOw
 channel = Yt::Channel.new id:  'UCmoX4QULJ9MB00xW4coMiOw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 26}}
 array.each {|data| Video.create!(data)}
@@ -396,11 +365,10 @@ array.each {|data| Video.create!(data)}
 # Simple Cooking Channel - UCsWpnu6EwIYDvlHoOESpwYg
 channel = Yt::Channel.new id:  'UCsWpnu6EwIYDvlHoOESpwYg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 4,
                                                    sub_category_id: 27}}
 array.each {|data| Video.create!(data)}
@@ -410,11 +378,10 @@ array.each {|data| Video.create!(data)}
 # Conan - UCi7GJNg51C3jgmYTUwqoUXA
 channel = Yt::Channel.new id:  'UCi7GJNg51C3jgmYTUwqoUXA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
                                                    sub_category_id: 28}}
 array.each {|data| Video.create!(data)}
@@ -422,109 +389,90 @@ array.each {|data| Video.create!(data)}
 # SNL - UCqFzWxSCi39LnW1JKFR3efg
 channel = Yt::Channel.new id:  'UCqFzWxSCi39LnW1JKFR3efg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
                                                    sub_category_id: 29}}
 array.each {|data| Video.create!(data)}
 
-# Ellen - UCp0hYYBW6IMayGgR-WeoCvQ
-channel = Yt::Channel.new id:  ' UCp0hYYBW6IMayGgR-WeoCvQ'
-array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
-                                                   title: video.title,
-                                                   description: video.description,
-                                                   thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
-                                                   category_id: 5,
-                                                   sub_category_id: 30}}
-array.each {|data| Video.create!(data)}
 
 # Movieclip Trailer - UCi8e0iOVk1fEOogdfu4YgfA
 channel = Yt::Channel.new id:  'UCi8e0iOVk1fEOogdfu4YgfA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
-                                                   sub_category_id: 31}}
+                                                   sub_category_id: 30}}
 array.each {|data| Video.create!(data)}
 
 # TMZ - UCK7IIV6Q2junGSdYK3BmZMg
 channel = Yt::Channel.new id:  'UCK7IIV6Q2junGSdYK3BmZMg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
-                                                   sub_category_id: 32}}
+                                                   sub_category_id: 31}}
 array.each {|data| Video.create!(data)}
 
 # Ray William Johnson - UCGt7X90Au6BV8rf49BiM6Dg
 channel = Yt::Channel.new id:  'UCGt7X90Au6BV8rf49BiM6Dg'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
-                                                   sub_category_id: 33}}
+                                                   sub_category_id: 32}}
 array.each {|data| Video.create!(data)}
 
 # Miranda Sing - UC1OFDlfdRb6ma1ZGZd07gWA
 channel = Yt::Channel.new id:  'UC1OFDlfdRb6ma1ZGZd07gWA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
+                                                   category_id: 5,
+                                                   sub_category_id: 33}}
+array.each {|data| Video.create!(data)}
+
+# RocketJump - UCDsO-0Yo5zpJk575nKXgMVA
+channel = Yt::Channel.new id:  'UCDsO-0Yo5zpJk575nKXgMVA'
+array = []
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
+                                                   title: video.title,
+                                                   description: video.description,
+                                                   thumbnail_url: video.thumbnail_url,
                                                    category_id: 5,
                                                    sub_category_id: 34}}
 array.each {|data| Video.create!(data)}
 
-# RocketJump - UCDsO-0Yo5zpJk575nKXgMVA
-channel = Yt::Channel.new id:  '0Yo5zpJk575nKXgMVA'
+# Jimmy Fallon - UC8-Th83bH_thdKZDJCrn88g
+channel = Yt::Channel.new id:  'UC8-Th83bH_thdKZDJCrn88g'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
                                                    sub_category_id: 35}}
-array.each {|data| Video.create!(data)}
-
-# Jimmy Fallon - UC8-Th83bH_thdKZDJCrn88g
-channel = Yt::Channel.new id:  'Th83bH_thdKZDJCrn88g'
-array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
-                                                   title: video.title,
-                                                   description: video.description,
-                                                   thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
-                                                   category_id: 5,
-                                                   sub_category_id: 36}}
 array.each {|data| Video.create!(data)}
 
 # Jimmy Kimmel Live - UCa6vGFO9ty8v5KZJXQxdhaw
 channel = Yt::Channel.new id:  'UCa6vGFO9ty8v5KZJXQxdhaw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 5,
-                                                   sub_category_id: 37}}
+                                                   sub_category_id: 36}}
 array.each {|data| Video.create!(data)}
 
 ##Gaming##
@@ -532,96 +480,87 @@ array.each {|data| Video.create!(data)}
 # Rooster Teeth - UCzH3iADRIq1IJlIXjfNgTpA
 channel = Yt::Channel.new id:  'UCzH3iADRIq1IJlIXjfNgTpA'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 38}}
+                                                   sub_category_id: 37}}
 array.each {|data| Video.create!(data)}
 
 # DanTDM - UCS5Oz6CHmeoF7vSad0qqXfw
 channel = Yt::Channel.new id:  'UCS5Oz6CHmeoF7vSad0qqXfw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 39}}
+                                                   sub_category_id: 38}}
 array.each {|data| Video.create!(data)}
 
 # The Game Theorists - UCo_IB5145EVNcf8hw1Kku7w
 channel = Yt::Channel.new id:  'UCo_IB5145EVNcf8hw1Kku7w'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 40}}
+                                                   sub_category_id: 39}}
 array.each {|data| Video.create!(data)}
 
 # PopularMMO - UCpGdL9Sn3Q5YWUH2DVUW1Ug
 channel = Yt::Channel.new id:  'UCpGdL9Sn3Q5YWUH2DVUW1Ug'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 41}}
+                                                   sub_category_id: 40}}
 array.each {|data| Video.create!(data)}
 
 # PewDiePie - UC-lHJZR3Gqxm24_Vd_AJ5Yw
 channel = Yt::Channel.new id:  'UC-lHJZR3Gqxm24_Vd_AJ5Yw'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 42}}
+                                                   sub_category_id: 41}}
 array.each {|data| Video.create!(data)}
 
 # Faze Rug - UCilwZiBBfI9X6yiZRzWty8Q
 channel = Yt::Channel.new id:  'UCilwZiBBfI9X6yiZRzWty8Q'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 43}}
+                                                   sub_category_id: 42}}
 array.each {|data| Video.create!(data)}
 
 # VanossGaming - UCKqH_9mk1waLgBiL2vT5b9g
 channel = Yt::Channel.new id:  'UCKqH_9mk1waLgBiL2vT5b9g'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 44}}
+                                                   sub_category_id: 43}}
 array.each {|data| Video.create!(data)}
 
 # Markiplier - UC7_YxT-KID8kRbqZo7MyscQ
 channel = Yt::Channel.new id:  'UC7_YxT-KID8kRbqZo7MyscQ'
 array = []
-channel.videos.take(10).each {|video| array << {  youtube_id: video.id,
+channel.videos.take(num).each {|video| array << {  youtube_id: video.id,
                                                    title: video.title,
                                                    description: video.description,
                                                    thumbnail_url: video.thumbnail_url,
-                                                   embed_url: video.embed_html,
                                                    category_id: 6,
-                                                   sub_category_id: 45}}
+                                                   sub_category_id: 44}}
 array.each {|data| Video.create!(data)}
-

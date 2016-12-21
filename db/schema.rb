@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20161216231257) do
     t.string   "title",           null: false
     t.text     "description",     null: false
     t.string   "thumbnail_url",   null: false
-    t.string   "embed_url",       null: false
     t.integer  "category_id",     null: false
     t.integer  "sub_category_id", null: false
     t.datetime "created_at",      null: false
