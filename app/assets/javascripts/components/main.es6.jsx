@@ -10,6 +10,8 @@ class Main extends React.Component {
   afterLogin(data){
     if (!data.name) {
       alert(data.message)
+    } else {
+      location.reload()
     }
   }
 
