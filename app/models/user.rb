@@ -8,4 +8,16 @@ class User < ApplicationRecord
   validates :full_name, :email, presence: true
   validates :full_name, length: { minimum: 3, maximum: 25}, uniqueness: { case_sensitive: false }
   validates :email, length: { maximum: 250 }, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
+
+  def create_preferences
+    @categories = Category.all
+    @categories.each do |category|
+      @sub_categories = category.sub_categories
+      @sub_categories.each do |sub_category|
+        Preference.create(user_id: self.id,  sub_category_id: sub_category.id)
+      end
+    end
+  end
+
+
 end

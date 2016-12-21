@@ -9,7 +9,7 @@ class LandingPage extends React.Component {
   }
 
   handleRegister(data){
-    if(data.userId){
+    if(data.user){
     alert(data.message)
     $(".login-button").click()}
     else {

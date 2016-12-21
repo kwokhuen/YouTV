@@ -2,9 +2,7 @@ class VideoOverlay extends React.Component {
 
   constructor(props){
     super(props)
-    this.state={
-      videoUrl: "f_DFLPwVF48"
-    }
+    this.state={}
 
     this.deployVideo = this.deployVideo.bind(this)
     this.destroyVideo = this.destroyVideo.bind(this)
@@ -12,7 +10,7 @@ class VideoOverlay extends React.Component {
   }
 
   deployVideo() {
-    this.setState({videoUrl: this.state.videoUrl + "?autoplay=1"})
+    this.setState({videoUrl: this.props.videoUrl + "?autoplay=1"})
     jQuery('.mm-product-video-modal-container').addClass('open');
     setTimeout(function() {
       jQuery('.mm-product-video-modal').addClass('open');
@@ -21,7 +19,7 @@ class VideoOverlay extends React.Component {
   }
 
   destroyVideo() {
-    this.setState({videoUrl: this.state.videoUrl.slice(0, -11)})
+    this.setState({videoUrl: this.props.videoUrl.slice(0, -11)})
     jQuery('.mm-product-video-modal').removeClass('open');
     setTimeout(function() {
       jQuery('.mm-product-video-modal-container').removeClass('open');
@@ -30,7 +28,8 @@ class VideoOverlay extends React.Component {
 
   render(){
     const buttonStyle = {
-      marginTop: "25%"
+      marginTop: "25%",
+      display: "none"
     }
     return(
       <div>
