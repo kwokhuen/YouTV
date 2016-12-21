@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @user.create_preferences
     @message = "Thank you for Registering."
       if @user.valid?
         render json: {message: "Thank you for Registering.", user: {name: @user.full_name, userId: @user.id}}

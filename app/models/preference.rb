@@ -6,6 +6,4 @@ class Preference < ApplicationRecord
 	validates :user_id, uniqueness: { scope: :sub_category_id }
 	validates_numericality_of :weight, only_integer: true
 
-  belongs_to :user
-  belongs_to :sub_category
 end

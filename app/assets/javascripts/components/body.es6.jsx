@@ -2,12 +2,12 @@ class Body extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state={}
+    this.state={videoUrl: ""}
     this.handleCategory = this.handleCategory.bind(this)
   }
 
   handleCategory(response) {
-    console.log(response)
+    this.setState({videoUrl: response.video})
   }
 
   render(){
@@ -16,13 +16,14 @@ class Body extends React.Component {
       <div>
         <h1 className="header-category">Categories</h1>
         <SimpleSlider
-        handleCategory={this.handleCategory}/>
+          handleCategory={this.handleCategory}/>
+        <VideoOverlay
+          videoUrl={this.state.videoUrl}/>
       </div>)
     } else {
       return(
         <div className="landingpage">
         <LandingPage />
-        <VideoOverlay />
         </div>)
 
     }

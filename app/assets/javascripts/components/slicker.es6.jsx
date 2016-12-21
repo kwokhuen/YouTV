@@ -9,14 +9,15 @@ class SimpleSlider extends React.Component {
 
   handleClick(event){
     const data = {
-      category:{category_id: $(event.target).attr("id") }
+      category:{category_id: $(event.target).attr("id")}
     }
     $.ajax({
       method: "get",
       url: "/video/category",
       data: data
     }).done((response)=>{
-      this.props.handleCategory(response)
+       this.props.handleCategory(response)
+       $(".mm-launch").click()
     })
   }
 
@@ -27,13 +28,9 @@ class SimpleSlider extends React.Component {
 
     // Variable Width
     var settings = {
-      dots: true,
-      // infinite: true,
-      // speed: 300,
       slidesToShow: 3,
-      centerMode: true,
-      arrows: true,
-      // variableWidth: true
+      centerMode: true
+
     };
 
     return (
