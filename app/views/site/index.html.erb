@@ -1,1 +1,5 @@
-<%= react_component "Main" %>
+<% if session[:user_id] %>
+  <%= react_component "Main", {loggedIn: true, user: {name: @user.full_name, userId: @user.id}} %>
+<% else %>
+  <%= react_component "Main", {loggedIn: false, user: ""} %>
+<% end %>
