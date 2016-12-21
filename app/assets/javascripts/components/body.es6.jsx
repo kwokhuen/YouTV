@@ -29,9 +29,4 @@ class Body extends React.Component {
     }
   }
 }
-// <div className="Section">
-//           <div className="sect"><h1>hello</h1></div>
-//           <div className="subSection"></div>
-//           <div className="sect"></div>
-//           <div className="subSection"></div>
-//         </div>
+

@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     @message = "Thank you for Registering."
       if @user.valid?
-        render json: {message: "Thank you for Registering.", user: @user}
+        render json: {message: "Thank you for Registering.", userId: @user.id}
       else
         @errors = @user.errors.full_messages
-        render :register
+        render json: {errors: @errors}
       end
   end
 

@@ -4,7 +4,7 @@ class NavigationBar extends React.Component {
     this.state = {
       message: ""
     }
-  this.handleRegister = this.handleRegister.bind(this)
+
   this.handleLogin = this.handleLogin.bind(this)
   this.afterLogout = this.afterLogout.bind(this)
 
@@ -12,11 +12,6 @@ class NavigationBar extends React.Component {
 
   handleLogin(data){
     this.props.handleLogin(data)
-  }
-
-  handleRegister(data){
-    alert(data.message)
-    $(".login-form").show()
   }
 
   afterLogout(response){
@@ -40,8 +35,6 @@ class NavigationBar extends React.Component {
             <img src="logo4.png" />
           </div>
           <div>
-            {/* <ModalRegister
-              handleRegister={this.handleRegister}/> */}
               <ModalLogin
                 afterLogin={this.props.afterLogin}
                 handleLogin={this.handleLogin}/>

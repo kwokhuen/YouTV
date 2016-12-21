@@ -2,6 +2,19 @@ class LandingPage extends React.Component {
 
   constructor(props) {
     super(props)
+
+    this.state={}
+
+    this.handleRegister = this.handleRegister.bind(this)
+  }
+
+  handleRegister(data){
+    if(data.userId){
+    alert(data.message)
+    $(".login-button").click()}
+    else {
+      alert(data.errors.join("\n"))
+    }
   }
 
   render(){
