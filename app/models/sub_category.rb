@@ -7,4 +7,8 @@ class SubCategory < ApplicationRecord
   has_many :preferences
   has_many :videos
   belongs_to :category
+
 end
+
+# sub_cat = SubCategory.first
+# user = User.last

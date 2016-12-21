@@ -2,12 +2,14 @@ class Body extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state={videoUrl: ""}
+    this.state={
+      videoUrl: "",
+      subCategoryId: ""}
     this.handleCategory = this.handleCategory.bind(this)
   }
 
   handleCategory(response) {
-    this.setState({videoUrl: response.video})
+    this.setState({videoUrl: response.youtube_id, subCategoryId: response.sub_category_id})
   }
 
   render(){

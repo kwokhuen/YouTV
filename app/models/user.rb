@@ -9,6 +9,11 @@ class User < ApplicationRecord
   validates :full_name, length: { minimum: 3, maximum: 25}, uniqueness: { case_sensitive: false }
   validates :email, length: { maximum: 250 }, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
 
+
+  def preference(sub_category)
+    preferences.where(sub_category_id: sub_category.id).reduce(0){|sum, preference| sum + preference.weight}
+  end
+
   def create_preferences
     @categories = Category.all
     @categories.each do |category|
@@ -18,6 +23,5 @@ class User < ApplicationRecord
       end
     end
   end
-
 
 end
