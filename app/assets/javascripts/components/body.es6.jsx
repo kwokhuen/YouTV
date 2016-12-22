@@ -41,11 +41,13 @@ class Body extends React.Component {
           videoUrl={this.state.videoUrl}
           categoryId={this.state.categoryId}
           handleCategory={this.handleCategory}/>
+        <Footer />
       </div>)
     } else {
       return(
         <div className="landingpage">
         <LandingPage />
+        <Footer />
         </div>)
 
     }

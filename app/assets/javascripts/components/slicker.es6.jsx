@@ -42,6 +42,10 @@ class SimpleSlider extends React.Component {
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="5" style={slickerStyle} src="entertain.png"/></div><h4 className="category_title center">Enterainment</h4></div>
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="6" style={slickerStyle} src="game.png"/></div><h4 className="category_title center">Gamer</h4></div>
               </div>
+              <div className="blah">
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="4" style={slickerStyle} src="favorite.png"/></div><h4 className="category_title center">Cooking</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="5" style={slickerStyle} src="youtv.png"/></div><h4 className="category_title center">Enterainment</h4></div>
+              </div>
           </div>
         </div>
       );
@@ -58,6 +62,8 @@ class SimpleSlider extends React.Component {
             <div><img onClick={this.props.handleClick} id="4" style={slickerStyle} src="cook.png"/><h4 className="category_title">Cooking</h4></div>
             <div><img onClick={this.props.handleClick} id="5" style={slickerStyle} src="entertain.png"/><h4 className="category_title">Enterainment</h4></div>
             <div><img onClick={this.props.handleClick} id="6" style={slickerStyle} src="game.png"/><h4 className="category_title">Gamer</h4></div>
+            <div><img onClick={this.props.handleClick} id="7" style={slickerStyle} src="favorite.png"/><h4 className="category_title">Your Favorite</h4></div>
+            <div><img onClick={this.props.handleClick} id="8" style={slickerStyle} src="youtv.png"/><h4 className="category_title">YouTV</h4></div>
           </Slider>
         </div>
       );
