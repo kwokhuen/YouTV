@@ -66,6 +66,7 @@ class VideoOverlay extends React.Component {
         data: {subCategoryId: this.props.subCategoryId}
       }).done(()=> {
           this.setState({thumbsDownClass: "fa fa-thumbs-down fa-5x"})
+          setTimeout(() => {this.next()}, 650)
         })
       }
     }
