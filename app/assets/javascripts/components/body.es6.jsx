@@ -63,17 +63,21 @@ class Body extends React.Component {
         <VideoOverlay
           subCategoryId={this.state.subCategoryId}
           videoUrl={this.state.videoUrl}
+          categoryId={this.state.categoryId}
+          handleCategory={this.handleCategory}
           category={this.state.category}
           isFavorite={this.state.isFavorite}
           isYoutv={this.state.isYoutv}
           handleCategory={this.handleCategory}
           handleYoutvClick={this.handleYoutvClick}
           handleFavoritesClick={this.handleFavoritesClick}/>
+        <Footer />
       </div>)
     } else {
       return(
         <div className="landingpage">
         <LandingPage />
+        <Footer />
         </div>)
 
     }

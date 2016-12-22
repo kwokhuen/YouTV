@@ -276,6 +276,46 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
   cursor: pointer;
 }
 
+.footer.container {
+  width: 100%;
+  background-color: #000000;
+  padding: 30px;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left
+}
+
+
+.footer-nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+
+.footer-nav li:last-child {
+  margin-right: 0;
+  text-align: left;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+
 .fa {
   cursor: pointer;
+
 }

@@ -42,6 +42,7 @@ class SimpleSlider extends React.Component {
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="5" style={slickerStyle} src="entertain.png"/></div><h4 className="category_title center">Enterainment</h4></div>
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="6" style={slickerStyle} src="game.png"/></div><h4 className="category_title center">Gamer</h4></div>
               </div>
+
               <div className="blah2">
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleFavoritesClick} id="7" style={slickerStyle} src="favorite.png"/></div><h4 className="category_title center">Favorites</h4></div>
                 <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleYoutvClick} id="8" style={slickerStyle} src="youtv.png"/></div><h4 className="category_title center">Your Channel</h4></div>
