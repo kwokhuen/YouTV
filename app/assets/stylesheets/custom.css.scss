@@ -273,5 +273,9 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 .category-image img {
   box-shadow: 2px 4px 3px rgba(0,0,0,0.6);
   border-radius: 5px;
+  cursor: pointer;
 }
 
+.fa {
+  cursor: pointer;
+}
