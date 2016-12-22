@@ -65,7 +65,7 @@ SubCategory.create!([
                                       {category_id: 6, name: "VanossGaming"},
                                       {category_id: 6, name: "Markiplier"}
                                     ])
-num = 20
+num = 100
 
 ##Comedy##
 # Pull videos from commedy central and store in our database
