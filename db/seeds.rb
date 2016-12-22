@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Yt.configure do |config|
-  config.api_key = 'AIzaSyDWN57DW6-qZp_E7i7t_IdPkiGo5jVwmfk'
+  config.api_key = 'ENV[API_KEY]'
 end
 
 Category.create!([
