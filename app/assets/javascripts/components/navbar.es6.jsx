@@ -32,13 +32,13 @@ class NavigationBar extends React.Component {
     return(
       <div>
         <nav>
+          <div>
+            <ModalLogin
+              afterLogin={this.props.afterLogin}
+              handleLogin={this.handleLogin}/>
+            </div>
           <div className="logo">
             <img src="logo4.png" />
-          </div>
-          <div>
-              <ModalLogin
-                afterLogin={this.props.afterLogin}
-                handleLogin={this.handleLogin}/>
           </div>
         </nav>
       </div>
