@@ -16,8 +16,6 @@ class Category < ApplicationRecord
     # end
   end
 
-private
-
   def sub_category_hash(user)
     hash = {}
     sub_categories.each do |sub_category|

@@ -5,10 +5,12 @@ class Body extends React.Component {
     this.state={
       videoUrl: "",
       subCategoryId: "",
-      categoryId: ""}
+      category: ""}
 
     this.handleCategory = this.handleCategory.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.handleYoutvClick = this.handleYoutvClick.bind(this)
+    this.handleFavoritesClick = this.handleFavoritesClick.bind(this)
   }
 
   handleClick(event){
@@ -25,8 +27,28 @@ class Body extends React.Component {
     })
   }
 
+  handleYoutvClick(){
+    $.ajax({
+      method: "get",
+      url: "/video/you_tv"
+    }).done((response) => {
+      this.handleCategory(response)
+      $(".mm-launch").click()
+    })
+  }
+
+  handleFavoritesClick(){
+    $.ajax({
+      method: "get",
+      url: "/video/your_favorites"
+    }).done((response) => {
+      this.handleCategory(response)
+      $(".mm-launch").click()
+    })
+  }
+
   handleCategory(response) {
-    this.setState({videoUrl: response.youtube_id, subCategoryId: response.sub_category_id, categoryId: response.category_id})
+    this.setState({videoUrl: response.youtube_id, subCategoryId: response.sub_category_id, category: response.category, isYoutv: response.isYoutv, isFavorite: response.isFavorite})
   }
 
   render(){
@@ -35,12 +57,18 @@ class Body extends React.Component {
       <div>
         <h1 className="header-category">Categories</h1>
         <SimpleSlider
-          handleClick={this.handleClick}/>
+          handleClick={this.handleClick}
+          handleYoutvClick={this.handleYoutvClick}
+          handleFavoritesClick={this.handleFavoritesClick}/>
         <VideoOverlay
           subCategoryId={this.state.subCategoryId}
           videoUrl={this.state.videoUrl}
-          categoryId={this.state.categoryId}
-          handleCategory={this.handleCategory}/>
+          category={this.state.category}
+          isFavorite={this.state.isFavorite}
+          isYoutv={this.state.isYoutv}
+          handleCategory={this.handleCategory}
+          handleYoutvClick={this.handleYoutvClick}
+          handleFavoritesClick={this.handleFavoritesClick}/>
       </div>)
     } else {
       return(

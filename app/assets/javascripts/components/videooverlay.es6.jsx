@@ -18,7 +18,13 @@ class VideoOverlay extends React.Component {
   }
 
   deployVideo() {
-    this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"})
+    if (this.props.isFavorite) {
+      this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart fa-5x"})
+    } else if (this.props.isYoutv) {
+      this.setState({thumbsUpClass: "fa fa-thumbs-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"})
+    } else {
+    this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"}) }
+
     this.setState({videoUrl: this.props.videoUrl + "?autoplay=1&enablejsapi=1"})
     jQuery('.mm-product-video-modal-container').addClass('open');
     setTimeout(function() {
@@ -68,18 +74,37 @@ class VideoOverlay extends React.Component {
 
 
     next(){
-      $.ajax({
-      method: "get",
-      url: "/video/category",
-      data: {category:{category_id: this.props.categoryId}}
-      }).done((response)=>{
-       this.props.handleCategory(response)
-       $(".mm-launch").click()
-      })
+      if (this.props.isFavorite === true) {
+        this.setState({heartClass: "fa fa-heart fa-5x"})
+        $.ajax({
+         method: "get",
+          url: "/video/your_favorites"
+          }).done((response)=>{
+          this.props.handleCategory(response)
+          $(".mm-launch").click()
+        })
+      } else if (this.props.isYoutv === true) {
+        $.ajax({
+         method: "get",
+          url: "/video/you_tv"
+          }).done((response)=>{
+          this.props.handleCategory(response)
+          $(".mm-launch").click()
+        })
+      } else {
+        $.ajax({
+        method: "get",
+        url: "/video/category",
+        data: {category:{category_id: this.props.category.id}}
+        }).done((response)=>{
+         this.props.handleCategory(response)
+         $(".mm-launch").click()
+        })
+      }
     }
 
     heart(){
-     if(this.state.heartClass === "fa fa-heart-o fa-5x") {
+      if(this.state.heartClass === "fa fa-heart-o fa-5x") {
       $.ajax({
       method: "post",
       url: "/video/favorite",
@@ -98,7 +123,7 @@ class VideoOverlay extends React.Component {
     return(
       <div>
         <div style={{align: "center"}} className="mm-product-video-modal-container">
-        <h1>{this.props.category}</h1>
+        <h1>{this.props.category.name}</h1>
           <div className="dummy-flexbox-item"></div>
           <div className="video-controls">
           <div className="fakearrow"></div>
