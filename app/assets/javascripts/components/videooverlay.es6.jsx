@@ -20,8 +20,6 @@ class VideoOverlay extends React.Component {
   deployVideo() {
     if (this.props.isFavorite) {
       this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart fa-5x"})
-    } else if (this.props.isYoutv) {
-      this.setState({thumbsUpClass: "fa fa-thumbs-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"})
     } else {
     this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x", thumbsDownClass: "fa fa-thumbs-o-down fa-5x", heartClass: "fa fa-heart-o fa-5x"}) }
 
@@ -75,7 +73,6 @@ class VideoOverlay extends React.Component {
 
     next(){
       if (this.props.isFavorite === true) {
-        this.setState({heartClass: "fa fa-heart fa-5x"})
         $.ajax({
          method: "get",
           url: "/video/your_favorites"
