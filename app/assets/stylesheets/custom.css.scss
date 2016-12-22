@@ -161,7 +161,7 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 .about-us {
   width: 100%;
   background-color: #1a1a1a;
-  height: 75vh;
+  height: 90vh;
   box-shadow: 0px 0px 5px #888888;
 
 }
@@ -276,10 +276,25 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
   cursor: pointer;
 }
 
+.fa {
+  cursor: pointer;
+}
+
+.main-page-container .landingpage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .footer.container {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 100px;
+  margin-top: -3em;
+  padding: 2rem;
   width: 100%;
   background-color: #000000;
-  padding: 30px;
 }
 
 .footer-nav {
@@ -287,18 +302,15 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
   float: left
 }
 
-
 .footer-nav li {
   display: inline-block;
   margin-left: 20px;
 }
 
-
 .footer-nav li:last-child {
   margin-right: 0;
   text-align: left;
 }
-
 .footer-nav li a:link,
 .footer-nav li a:visited {
   text-decoration: none;
@@ -310,12 +322,19 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 .footer-nav li a:active {
   color: #ddd
 }
-
-footer p {
+.footer p {
   color: #888;
   text-align: center;
+}
 
-.fa {
-  cursor: pointer;
+.page-wrap {
+  margin-bottom: 20%;
+}
 
+.page-wrap-landingpage {
+  margin-bottom: 10%;
+}
+
+.footer.container, .page-wrap:after {
+  height: 100px;
 }

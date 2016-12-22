@@ -54,7 +54,8 @@ class Body extends React.Component {
   render(){
     if (this.props.loggedIn) {
     return(
-      <div>
+      <div className="main-page-container">
+        <div className="page-wrap">
         <h1 className="header-category">Categories</h1>
         <SimpleSlider
           handleClick={this.handleClick}
@@ -71,13 +72,16 @@ class Body extends React.Component {
           handleCategory={this.handleCategory}
           handleYoutvClick={this.handleYoutvClick}
           handleFavoritesClick={this.handleFavoritesClick}/>
+        </div>
         <Footer />
       </div>)
     } else {
       return(
-        <div className="landingpage">
-        <LandingPage />
-        <Footer />
+        <div className="landingpage-container">
+        <div className="page-wrap-landingpage">
+          <LandingPage />
+        </div>
+          <Footer />
         </div>)
 
     }
