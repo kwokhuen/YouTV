@@ -34,7 +34,7 @@ class LandingPage extends React.Component {
 
           <div className="about-us">
             <img src="about-us.png" />
-            <p className="about-us-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p className="about-us-text">When was the last time you came home and weren’t overloaded with information?  From the kids to the pets to the web.  <br/><br/>Here at UTV we want to take you back to a time when things were much easier.  But continue to give you new and up to date content from the world's leader in content delivery Youtube. We do this by taking the grief out of looking online, searching through databases and wondering what do i watch next.  All of content are prescreened to be enjoyable and to match the categories you choose.  <br/><br/>If you still don't like what you see simply thumbs down, the video you’re watching and skip to another.  Our algorithm is made to understand and evaluate your viewing needs and cater our content to meet that need.  <br/><br/>We hope you enjoy your watching experience with us!</p>
           </div>
       </div>
     );
