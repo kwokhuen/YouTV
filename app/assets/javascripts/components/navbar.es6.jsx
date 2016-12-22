@@ -27,9 +27,7 @@ class NavigationBar extends React.Component {
     var Navbar = ReactBootstrap.Navbar
     var Nav = ReactBootstrap.Nav
     var NavItem = ReactBootstrap.NavItem
-    var usernameStyle = {
-      margin: "0"
-    }
+
   if (!this.props.loggedIn) {
     return(
       <div>
@@ -50,7 +48,8 @@ class NavigationBar extends React.Component {
       <div>
         <nav>
           <div className="logged-in-nav">
-            <h4 style={usernameStyle}>{this.props.user.name}</h4>
+            <h4 className="username">{this.props.user.name}</h4>
+            <h4>|</h4>
             <Logout
               afterLogout={this.afterLogout}/>
 

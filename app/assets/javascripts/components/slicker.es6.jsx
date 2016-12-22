@@ -19,7 +19,9 @@ class SimpleSlider extends React.Component {
 
     // Variable Width
     var settings = {
+      infinite: true,
       slidesToShow: 3,
+
       variableWidth: true
     };
     var Button = ReactBootstrap.Button;
