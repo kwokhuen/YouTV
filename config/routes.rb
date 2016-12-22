@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'video/thumbs_down' => 'videos#thumbs_down'
   get 'video/category' => 'videos#pick_a_category'
   post 'video/favorite' => 'videos#favorite'
+  get 'video/your_favorites' => 'videos#your_favorites'
+  get 'video/you_tv' => 'videos#you_tv'
 	# resources 'videos'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

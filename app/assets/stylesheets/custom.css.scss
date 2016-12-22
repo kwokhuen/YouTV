@@ -233,6 +233,13 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
   margin-bottom: 40px;
 }
 
+.blah2 {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
 .category-container {
   margin-left: 5%;
   margin-right: 5%;
@@ -266,6 +273,7 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 .category-image img {
   box-shadow: 2px 4px 3px rgba(0,0,0,0.6);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .footer.container {
@@ -306,4 +314,8 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 footer p {
   color: #888;
   text-align: center;
+
+.fa {
+  cursor: pointer;
+
 }

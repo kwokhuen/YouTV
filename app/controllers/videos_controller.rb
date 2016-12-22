@@ -4,7 +4,7 @@ class VideosController < ApplicationController
 
   def pick_a_category
     @category = Category.find(params["category"]["category_id"].to_i)
-    render json: {youtube_id: @category.pick_a_video(@user)[:youtube_id], sub_category_id: @category.pick_a_video(@user)[:sub_category_id], category_id: @category.id}
+    render json: {youtube_id: @category.pick_a_video(@user)[:youtube_id], sub_category_id: @category.pick_a_video(@user)[:sub_category_id], category: @category, isYoutv: false, isFavorite: false}
   end
 
   def thumbs_up
@@ -22,6 +22,18 @@ class VideosController < ApplicationController
     Favorite.find_or_create_by(user_id: @user.id, video_id: video.id)
   end
 
+  def your_favorites
+    video = @user.pick_a_favorite
+    category = SubCategory.find(video[:sub_category_id]).category
+    render json: {youtube_id: video[:youtube_id], sub_category_id: video[:sub_category_id], category: category, isFavorite: true, isYoutv: false}
+  end
+
+  def you_tv
+    video = @user.pick_a_video
+    category = SubCategory.find(video[:sub_category_id]).category
+    render json: {youtube_id: video[:youtube_id], sub_category_id: video[:sub_category_id], category: category, isYoutv: true, isFavorite: false}
+  end
+
   private
 
   def find_user
@@ -29,3 +41,4 @@ class VideosController < ApplicationController
   end
 
 end
+
