@@ -33,14 +33,14 @@ class SimpleSlider extends React.Component {
           </div>
           <div className="categories-container">
               <div className="blah">
-                <div className="category-container"><div className="category-image"><img className="center-block" class="center-block" onClick={this.props.handleClick} id="1" style={slickerStyle} src="comedy.png"/></div><h4 className="category_title center">Comedy Network</h4></div>
-                <div className="category-container"><div className="category-image"><img className="center-block" class="center-block" onClick={this.props.handleClick} id="2" style={slickerStyle} src="education.png"/></div><h4 className="category_title center">Educational & Informative</h4></div>
-                <div className="category-container"><div className="category-image"><img className="center-block" class="center-block" onClick={this.props.handleClick} id="3" style={slickerStyle} src="kids.png"/></div><h4 className="category_title center">Kids Discovery</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="1" style={slickerStyle} src="comedy.png"/></div><h4 className="category_title center">Comedy Network</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="2" style={slickerStyle} src="education.png"/></div><h4 className="category_title center">Educational & Informative</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="3" style={slickerStyle} src="kids.png"/></div><h4 className="category_title center">Kids Discovery</h4></div>
               </div>
               <div className="blah">
-                <div className="category-container"><div className="category-image"><img className="center-block" class="center-block" onClick={this.props.handleClick} id="4" style={slickerStyle} src="cook.png"/></div><h4 className="category_title center">Cooking</h4></div>
-                <div className="category-container"><div className="category-image"><img className="center-block" class="center-block" onClick={this.props.handleClick} id="5" style={slickerStyle} src="entertain.png"/></div><h4 className="category_title center">Enterainment</h4></div>
-                <div className="category-container"><div className="category-image"><img className="center-block" class="center-block" onClick={this.props.handleClick} id="6" style={slickerStyle} src="game.png"/></div><h4 className="category_title center">Gamer</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="4" style={slickerStyle} src="cook.png"/></div><h4 className="category_title center">Cooking</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="5" style={slickerStyle} src="entertain.png"/></div><h4 className="category_title center">Enterainment</h4></div>
+                <div className="category-container"><div className="category-image"><img className="center-block" onClick={this.props.handleClick} id="6" style={slickerStyle} src="game.png"/></div><h4 className="category_title center">Gamer</h4></div>
               </div>
           </div>
         </div>

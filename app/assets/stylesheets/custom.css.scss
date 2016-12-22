@@ -2,6 +2,10 @@ html, body {
   height: 93%;
 }
 
+button {
+  outline: none !important;
+}
+
 body {
   // background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('background-image.jpg') no-repeat center center fixed;
   background: linear-gradient( to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%), url('background-image.jpg') no-repeat center center fixed;
@@ -263,3 +267,4 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
   box-shadow: 2px 4px 3px rgba(0,0,0,0.6);
   border-radius: 5px;
 }
+
