@@ -98,6 +98,7 @@ class VideoOverlay extends React.Component {
     return(
       <div>
         <div style={{align: "center"}} className="mm-product-video-modal-container">
+        <h1>{this.props.category}</h1>
           <div className="dummy-flexbox-item"></div>
           <div className="video-controls">
           <div className="fakearrow"></div>

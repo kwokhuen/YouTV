@@ -16,6 +16,8 @@ class SimpleSlider extends React.Component {
     var settings = {
       infinite: true,
       slidesToShow: 3,
+
+
       variableWidth: true
     };
 
