@@ -41,27 +41,29 @@ class VideoOverlay extends React.Component {
   }
 
   thumbs_up(){
+    if(this.state.thumbsUpClass === "fa fa-thumbs-o-up fa-5x") {
+      this.setState({thumbsDownClass: "fa fa-thumbs-o-down fa-5x"})
     $.ajax({
       url: "/video/thumbs_up",
       type: "post",
       data: {subCategoryId: this.props.subCategoryId}
     }).done(()=> {
-      if(this.state.thumbsUpClass === "fa fa-thumbs-o-up fa-5x") {
         this.setState({thumbsUpClass: "fa fa-thumbs-up fa-5x"})
-      }
-    })
+      })
+    }
   }
 
     thumbs_down(){
+      if(this.state.thumbsDownClass === "fa fa-thumbs-o-down fa-5x") {
+        this.setState({thumbsUpClass: "fa fa-thumbs-o-up fa-5x"})
       $.ajax({
         url: "/video/thumbs_down",
         type: "post",
         data: {subCategoryId: this.props.subCategoryId}
       }).done(()=> {
-        if(this.state.thumbsDownClass === "fa fa-thumbs-o-down fa-5x") {
           this.setState({thumbsDownClass: "fa fa-thumbs-down fa-5x"})
-        }
-      })
+        })
+      }
     }
 
 
@@ -77,17 +79,16 @@ class VideoOverlay extends React.Component {
     }
 
     heart(){
+     if(this.state.heartClass === "fa fa-heart-o fa-5x") {
       $.ajax({
       method: "post",
       url: "/video/favorite",
       data: {youtube_id: this.props.videoUrl}
       }).done(()=>{
-       if(this.state.heartClass === "fa fa-heart-o fa-5x") {
           this.setState({heartClass: "fa fa-heart fa-5x"})
-        }
-      })
+        })
+      }
     }
-
 
   render(){
     const buttonStyle = {
@@ -97,6 +98,7 @@ class VideoOverlay extends React.Component {
     return(
       <div>
         <div style={{align: "center"}} className="mm-product-video-modal-container">
+        <h1>{this.props.category}</h1>
           <div className="dummy-flexbox-item"></div>
           <div className="video-controls">
           <div className="fakearrow"></div>

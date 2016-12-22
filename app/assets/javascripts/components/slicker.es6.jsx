@@ -7,7 +7,6 @@ class SimpleSlider extends React.Component {
   }
 
 
-
   render() {
     const slickerStyle = {
       width: "20em"
@@ -15,8 +14,10 @@ class SimpleSlider extends React.Component {
 
     // Variable Width
     var settings = {
+      infinite: true,
       slidesToShow: 3,
-      centerMode: true,
+
+
       variableWidth: true
     };
 

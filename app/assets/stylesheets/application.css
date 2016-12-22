@@ -139,7 +139,7 @@ iframe {
   margin-bottom: 30px;
 }
 
-.logout{
+.logout, .username{
   cursor: pointer;
 }
 
