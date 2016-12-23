@@ -98,7 +98,7 @@ body > main > div > div > div:nth-child(1) > nav > div > div:nth-child(1) > butt
   text-transform: uppercase;
   border: none;
 }
-body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2) > div > button {
+body > main > div > div > div.landingpage-container > div.page-wrap-landingpage > div > div.wrapper > div:nth-child(2) > div > button {
   background-image: none;
   background-color: #e50914;
   font-family: Arial,sans-serif;
@@ -160,7 +160,7 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 .about-us {
   width: 100%;
   background-color: #1a1a1a;
-  height: 90vh;
+  height: 120vh;
   box-shadow: 0px 0px 5px #888888;
 
 }
@@ -331,7 +331,7 @@ body > main > div > div > div.landingpage > div > div.wrapper > div:nth-child(2)
 }
 
 .page-wrap-landingpage {
-  margin-bottom: 10%;
+  margin-bottom: 0;
 }
 
 .footer.container, .page-wrap:after {
