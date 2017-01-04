@@ -1,24 +1,13 @@
-# README
+# YouTV
+![Alt text](./landingpage.jpg?raw=true)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# First-World Problem
+There are billions of videos on Youtube. Picking a funny video on Youtube is tiring and tedious.
 
-Things you may want to cover:
+# Solution
+Introducing YouTV, a web application that understands your tastes. It's YourTV.
+Finding entertaining videos that you enjoy are just a click away.
+![Alt text](./loggedinpage.jpg?raw=true)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Simply click, play and enjoy.
+![Alt text](./videopage.jpg?raw=true)
